@@ -4,7 +4,9 @@
   "dependencies": {
     "expo": "^23.0.0",
     "react": "16.0.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz"
+    "react-native": "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz",
+    "react-native-ui-kitten": "^2.0.1",
+    "react-navigation": "^1.0.0-beta.21"
   },
   "name": "minhaCelula-React",
   "version": "0.0.0",
