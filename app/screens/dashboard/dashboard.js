@@ -6,6 +6,7 @@ import {
     RkText,
     RkStyleSheet, RkButton,
 } from 'react-native-ui-kitten';
+import {DoughnutChart} from "../../components/charts/doughnutChart";
 
 
 export class Dashboard extends React.Component {
@@ -31,6 +32,7 @@ export class Dashboard extends React.Component {
     render() {
         return (
             <View style={styles.screen}>
+                <DoughnutChart/>
                 <RkText style={styles.text}>Relatórios</RkText>
             </View>
         )

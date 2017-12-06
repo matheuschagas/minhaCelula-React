@@ -4,9 +4,11 @@ import {
 } from 'react-navigation';
 import {AppRoutes} from './config/navigation/routes';
 import {StatusBar} from "react-native";
-import * as Screens from './screens';
 import {data} from './data';
-import { Platform } from 'react-native';
+
+import {bootstrap} from './config/bootstrap';
+
+bootstrap();
 
 
 function getCurrentRouteName(navigationState) {
@@ -57,6 +59,13 @@ MinhaCelula.router.getStateForAction = (action, state) => {
 export default class App extends React.Component{
     async componentDidMount() {
         Expo.ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.PORTRAIT);
+        await Font.loadAsync({
+            'Lato-Regular': require('./assets/fonts/Lato-Regular.ttf'),
+            'Lato-Bold': require('./assets/fonts/Lato-Bold.ttf'),
+            'Lato-Light': require('./assets/fonts/Lato-Light.ttf'),
+            'fontawesome': require('./assets/fonts/fontawesome.ttf'),
+        });
+        this.setState({ fontLoaded: true });
     }
 
     componentWillMount() {
@@ -64,8 +73,9 @@ export default class App extends React.Component{
 
     render(){
         return(
+            this.state.fontLoaded ?
                 <MinhaCelula
-                />
+                /> : null
         );
     }
 }
