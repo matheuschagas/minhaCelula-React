@@ -13,7 +13,7 @@ export class Reunioes extends React.Component {
         title: 'REUNIÕES',
         headerTintColor: '#FFF',
         headerStyle: {
-            backgroundColor: '#3d30c7'
+            backgroundColor: '#2c3e50'
         },
         headerLeft: null
     };

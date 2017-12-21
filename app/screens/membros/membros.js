@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    View, Dimensions, Image
+    View, Dimensions, Image, ScrollView, FlatList, Text
 } from 'react-native';
 import {
     RkText,
@@ -13,7 +13,7 @@ export class Membros extends React.Component {
         title: 'MEMBROS',
         headerTintColor: '#FFF',
         headerStyle: {
-            backgroundColor: '#3d30c7'
+            backgroundColor: '#2c3e50'
         },
         headerLeft: null
     };
@@ -27,20 +27,37 @@ export class Membros extends React.Component {
         super(props);
     }
 
+    _renderMembro(membro){
+        return (
+            <View style={{height: 100, width: 200}}>
+                <View style={{width: 200, height: 99, alignItems:'center'}}><Text style={{color: '#000'}}>{membro.item.nome}</Text></View>
+                <View style={{width:200, height: 1, backgroundColor: '#b1b1b1'}}/>
+            </View>
+        )
+    }
+
+    _keyExtractor(item){
+        return item.key;
+    }
+
 
     render() {
         return (
-            <View style={styles.screen}>
-                <RkText style={styles.text}>Membros</RkText>
-            </View>
+            <ScrollView style={styles.screen} contentContainerStyle={{alignItems: 'center', justifyContent: 'center',}}>
+                <FlatList
+                    data={[{key: 1, nome: 'Matheus Marrane Chagas', dataNascimento: '08/05/1995'}]}
+                    ref='list'
+                    style={styles.list}
+                    keyExtractor={this._keyExtractor}
+                    renderItem={this._renderMembro}
+                />
+            </ScrollView>
         )
     }
 }
 let styles = RkStyleSheet.create(theme => ({
     screen: {
         backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
         flex: 1,
         paddingLeft: 10,
         paddingRight: 10

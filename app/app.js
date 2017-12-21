@@ -3,8 +3,9 @@ import {
      TabNavigator
 } from 'react-navigation';
 import {AppRoutes} from './config/navigation/routes';
-import {StatusBar} from "react-native";
+import {StatusBar, Platform} from "react-native";
 import {data} from './data';
+import { Font } from 'expo';
 
 import {bootstrap} from './config/bootstrap';
 
@@ -30,11 +31,10 @@ const MinhaCelula = TabNavigator({
     animationEnabled: true,
     tabBarOptions: {
         activeTintColor: '#e91e63',
+        showLabel: false,
+        showIcon: true,
     },
-    headerMode: 'screen',
-    cardStyle: {
-        paddingTop: StatusBar.currentHeight
-    }
+    headerMode: 'screen'
 });
 
 
@@ -57,6 +57,8 @@ MinhaCelula.router.getStateForAction = (action, state) => {
 };
 
 export default class App extends React.Component{
+    state = {fontLoaded: false};
+
     async componentDidMount() {
         Expo.ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.PORTRAIT);
         await Font.loadAsync({

@@ -1,7 +1,13 @@
 import * as Screens from '../../screens';
+import React from 'react';
 import {
     StackNavigator
 } from 'react-navigation';
+import {
+    RkText
+} from 'react-native-ui-kitten';
+import {Platform, StatusBar} from 'react-native';
+import {FontAwesome} from "../../assets/icons";
 let routes = {
     DashboardStack: {
         title: 'dashboard',
@@ -9,7 +15,15 @@ let routes = {
             Dashboard: {
                 screen: Screens.Dashboard,
             },
-        }),
+        },
+            {
+                cardStyle: {
+                    paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight
+                }
+            }),
+        navigationOptions:{
+            tabBarIcon: (<RkText rkType='awesome'>{FontAwesome.lineChart}</RkText>),
+        },
     },
     ReunioesStack: {
         title: 'reuniões',
@@ -17,7 +31,15 @@ let routes = {
             Reunioes: {
                 screen: Screens.Reunioes,
             },
-        }),
+        },
+            {
+                cardStyle: {
+                    paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight
+                }
+            }),
+        navigationOptions:{
+            tabBarIcon: (<RkText rkType='awesome'>{FontAwesome.dashboard}</RkText>),
+        },
     },
     MembrosStack: {
         title: 'membros',
@@ -25,7 +47,15 @@ let routes = {
             Membros: {
                 screen: Screens.Membros,
             },
-        }),
+        },
+            {
+                cardStyle: {
+                    paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight
+                }
+            }),
+        navigationOptions:{
+            tabBarIcon: (<RkText rkType='awesome'>{FontAwesome.users}</RkText>),
+        },
     },
     ConfiguracoesStack: {
         title: 'configurações',
@@ -33,7 +63,15 @@ let routes = {
             Dashboard: {
                 screen: Screens.Configuracoes,
             },
-        }),
+        },
+            {
+                cardStyle: {
+                    paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight
+                }
+            }),
+        navigationOptions:{
+            tabBarIcon: (<RkText rkType='awesome'>{FontAwesome.cogs}</RkText>),
+        },
     },
 
 };

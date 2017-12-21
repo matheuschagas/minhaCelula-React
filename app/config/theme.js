@@ -109,7 +109,8 @@ export const KittenTheme = {
       alter: Colors.alterBackground,
       scroll: Colors.alterBackground,
       bold: Colors.alterBackground,
-      overlay: Colors.overlayBackground
+      overlay: Colors.overlayBackground,
+        header: '#2c3e50'
     },
     button: {
       back: Colors.background,
