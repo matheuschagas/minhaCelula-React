@@ -1,6 +1,7 @@
 import React from 'react';
 import {
-     TabNavigator
+    StackNavigator,
+    TabNavigator
 } from 'react-navigation';
 import {AppRoutes} from './config/navigation/routes';
 import {StatusBar, Platform} from "react-native";
@@ -8,6 +9,7 @@ import {data} from './data';
 import { Font } from 'expo';
 
 import {bootstrap} from './config/bootstrap';
+import * as Screens from './screens';
 
 bootstrap();
 
@@ -23,19 +25,38 @@ function getCurrentRouteName(navigationState) {
     return route.routeName;
 }
 
+
 const MinhaCelula = TabNavigator({
     ...AppRoutes
 }, {
     tabBarPosition: 'bottom',
-    swipeEnabled: true,
+    swipeEnabled: false,
     animationEnabled: true,
     tabBarOptions: {
-        activeTintColor: '#e91e63',
+        activeTintColor: '#cd6133',
         showLabel: false,
         showIcon: true,
     },
     headerMode: 'screen'
 });
+
+MinhaCelulaMain = StackNavigator({
+        Login: {
+            screen: Screens.Login,
+        },
+    CadastreSe:{
+            screen: Screens.CadastreSe,
+    },
+    App: {
+            screen: MinhaCelula
+    }
+    },
+    {
+        cardStyle: {
+            paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight
+        },
+        headerMode: 'none'
+    });
 
 
 
@@ -76,7 +97,7 @@ export default class App extends React.Component{
     render(){
         return(
             this.state.fontLoaded ?
-                <MinhaCelula
+                <MinhaCelulaMain
                 /> : null
         );
     }

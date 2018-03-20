@@ -1,13 +1,13 @@
 {
   "expo": {
     "name": "Minha Célula",
-    "description": "An empty new project",
-    "slug": "minhaCelula.matheusmarrane.com",
+    "description": "Gerencia de células",
+    "slug": "minhacelulaigrejanasnuvens",
     "privacy": "public",
     "sdkVersion": "23.0.0",
     "version": "1.0.0",
     "orientation": "portrait",
-    "primaryColor": "#cccccc",
+    "primaryColor": "#cd6133",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",

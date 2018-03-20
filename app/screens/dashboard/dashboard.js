@@ -3,8 +3,8 @@
     View,
     Image,
     ScrollView,
-    Dimensions
-} from 'react-native';
+    Dimensions, Text
+    } from 'react-native';
 
 import {
     RkText,
@@ -27,7 +27,7 @@ export class Dashboard extends React.Component {
         title: 'DASHBOARD',
         headerTintColor: '#FFF',
         headerStyle: {
-            backgroundColor: '#2c3e50'
+            backgroundColor: '#cd6133'
         },
         headerLeft: null
     };
@@ -37,9 +37,13 @@ export class Dashboard extends React.Component {
         };
 
     render() {
-        let chartBlockStyles = [styles.chartBlock, {backgroundColor: RkTheme.current.colors.control.background}];
+        let chartBlockStyles = [styles.chartBlock, {backgroundColor: '#fff'}];
         return (
             <ScrollView style={styles.screen}>
+                <View style={chartBlockStyles}>
+                    <RkText>Aniversariantes do Mês</RkText>
+                    <Text>Douglas Marrane Chagas</Text>
+                </View>
                 <View style={chartBlockStyles}>
                     <DoughnutChart/>
                 </View>
@@ -60,7 +64,7 @@ export class Dashboard extends React.Component {
 let styles = RkStyleSheet.create(theme => ({
 
     screen: {
-        backgroundColor: theme.colors.screen.scroll,
+        backgroundColor: '#fff',
         paddingHorizontal: 15,
     },
     statItems: {

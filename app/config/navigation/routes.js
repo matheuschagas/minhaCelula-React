@@ -47,6 +47,9 @@ let routes = {
             Membros: {
                 screen: Screens.Membros,
             },
+            Membro: {
+                screen: Screens.Membro,
+            }
         },
             {
                 cardStyle: {
@@ -54,7 +57,7 @@ let routes = {
                 }
             }),
         navigationOptions:{
-            tabBarIcon: (<RkText rkType='awesome'>{FontAwesome.users}</RkText>),
+            tabBarIcon: (<RkText rkType='awesome'>{FontAwesome.users}</RkText>)
         },
     },
     ConfiguracoesStack: {

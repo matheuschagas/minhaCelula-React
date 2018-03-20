@@ -15,10 +15,13 @@
   },
   "dependencies": {
     "expo": "^23.0.0",
+    "firebase": "^4.11.0",
     "lodash": "^4.17.4",
+    "moment": "^2.21.0",
     "react": "16.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz",
     "react-native-linear-gradient": "^2.3.0",
+    "react-native-loading-spinner-overlay": "^0.5.2",
     "react-native-pathjs-charts": "0.0.33",
     "react-native-svg": "5.5.1",
     "react-native-ui-kitten": "^2.0.1",
