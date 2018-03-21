@@ -49,6 +49,7 @@ export class Configuracoes extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {celulaNoRadar: true};
     }
 
 
@@ -60,7 +61,7 @@ export class Configuracoes extends React.Component {
                 <RkTextInput labelStyle={{color: 'black'}} label={'Horário'} ref={'horario'} returnKeyType={'done'} style={styles.input} inputStyle={{color: 'black'}} />
                 <View style={{flex: 1, flexDirection: 'row', marginLeft: 10, marginRight: 10}}>
                     <RkText>Célula no Radar?</RkText>
-                    <Switch style={{marginLeft: 20}}/>
+                    <Switch style={{marginLeft: 20}} value={this.state.celulaNoRadar} onValueChange={()=>{this.setState({celulaNoRadar: !this.state.celulaNoRadar});}}/>
                 </View>
                 <RkText style={{alignSelf: 'center', fontSize: 27, marginTop: 15}}>Suas Informações</RkText>
                 <RkTextInput labelStyle={{color: 'black'}} label={'Nome'} ref={'nome'} autoCorrect={false} returnKeyType={'done'} style={styles.input} inputStyle={{color: 'black'}} />

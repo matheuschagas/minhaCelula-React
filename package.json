@@ -20,6 +20,7 @@
     "moment": "^2.21.0",
     "react": "16.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz",
+    "react-native-actionsheet": "^2.3.0",
     "react-native-linear-gradient": "^2.3.0",
     "react-native-loading-spinner-overlay": "^0.5.2",
     "react-native-pathjs-charts": "0.0.33",
